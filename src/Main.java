@@ -6,11 +6,16 @@ import java.util.stream.Stream;
 public class Main {
 
     public static void main(String[] args) {
-        ArrayList<String> list = new ArrayList<>(Arrays.asList("Будет","так","как","ты","захочешь"));
-        Stream<String> stream = list.stream();
-        System.out.println(getStringFromStream(stream));
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1,2,3,4,5));
+        printList(list);
+        printListLambda(list);
     }
-    public static String getStringFromStream(Stream stringStream){
-        return stringStream.collect(Collectors.joining(" ")).toString();
+    public static void printList(ArrayList list){
+        for(int i = 0; i < list.size(); i++){
+            System.out.println(list.get(i));
+        }
+    }
+    public static void printListLambda(ArrayList list){
+        list.forEach(System.out::println);
     }
 }
